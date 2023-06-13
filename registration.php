@@ -51,6 +51,9 @@ if (isset($_POST['register']))
 
       ?>
     </header> 
+
+    
+
 <section class="row">
     <div class="col-md-8 offset-md-2">
         <form method="post" class="m-5">

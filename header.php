@@ -1,5 +1,5 @@
 <?php
-    
+ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,10 +36,10 @@
         </li> 
         <li class="nav-item dropdown"> 
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
-          <i class="fa-solid fa-user" style="color: #5774a2;"></i>          </a> 
+          <i class="fa-solid fa-user" style="color: #5774a2;"></i> </a> 
 
           <ul class="dropdown-menu"> 
-            <?php
+            <?php         
             if(isset($_SESSION['username'])){
                 echo'<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
             }

@@ -4,7 +4,7 @@ session_start();
 $a=session_destroy();
 
 if($a){
-    header("Location: index.php");
+    header("Location: login.php");
 }
 
 ?>

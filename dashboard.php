@@ -1,42 +1,120 @@
-<?php 
-
-
-
-if(isset($_SESSION['username'])&& $_SESSION['type']='admin')//can be use by admin only
-{
-    header('location:login.php');
-}
-
-
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .dashboard {
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    
+    .section {
+      margin-bottom: 20px;
+    }
+    
+    .section-header {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .data {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .data-item {
+      width: 150px;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .data-item h3 {
+      font-size: 18px;
+      margin: 0;
+    }
+    
+    .data-item p {
+      font-size: 14px;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-<div id="main" class="container"> 
-    <header class="row" >
-      <?php
-      include 'header.php';
-      ?>
-    </header> 
+    <nav>
+        <button>
+            <a href="logout.php">LogOut</a>
+        </button>
+    </nav>
+  <div class="dashboard">
+    <div class="section">
+      <div class="section-header">Users Overview</div>
+      <div class="data">
+        <div class="data-item">
+          <h3>Total Users</h3>
+          <p>[Number]</p>
+        </div>
+        <div class="data-item">
+          <h3>Active Users</h3>
+          <p>[Number]</p>
+        </div>
+        <div class="data-item">
+          <h3>Inactive Users</h3>
+          <p>[Number]</p>
+        </div>
+      </div>
+    </div>
     
-    <h1>Welcome to the Library</h1>
-
-<h2>Menu:</h2>
-<ul>
-    <li><a href="books.php">View Books</a></li>
-    <li><a href="borrow.php">Borrow Book</a></li>
-    <li><a href="return.php">Return Book</a></li>
-    <li><a href="add_book.php">Add Book</a></li>
-    <li><a href="add_member.php">Add Member</a></li>
-</ul>
-
-</div>
-
+    <div class="section">
+      <div class="section-header">Books Overview</div>
+      <div class="data">
+        <div class="data-item">
+          <h3>Total Books</h3>
+          <p>[Number]</p>
+        </div>
+        <div class="data-item">
+          <h3>Available Books</h3>
+          <p>[Number]</p>
+        </div>
+        <div class="data-item">
+          <h3>Reserved Books</h3>
+          <p>[Number]</p>
+        </div>
+        <div class="data-item">
+          <h3>Overdue Books</h3>
+          <p>[Number]</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="section">
+      <div class="section-header">Reservations Overview</div>
+      <div class="data">
+        <div class="data-item">
+          <h3>Total Reservations</h3>
+          <p>[Number]</p>
+        </div>
+        <div class="data-item">
+          <h3>Pending Reservations</h3>
+          <p>[Number]</p>
+        </div>
+        <div class="data-item">
+          <h3>Active Reservations</h3>
+          <p>[Number]</p>
+        </div>
+        <div class="data-item">
+          <h3>Completed Reservations</h3>
+          <p>[Number]</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
